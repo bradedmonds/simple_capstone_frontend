@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Concerts from '../views/Concerts.vue'
-// import All from '../views/All.vue'
+import All from '../views/All.vue'
 
 Vue.use(VueRouter)
 
@@ -12,11 +12,11 @@ const routes = [
     name: 'Home',
     component: Home
   },
-  // {
-  //   path: '/:id/all',
-  //   name: 'All',
-  //   component: All
-  // },
+  {
+    path: '/:id/all',
+    name: 'All',
+    component: All
+  },
   {
     path: '/:id',
     name: 'Concerts',
