@@ -1,6 +1,6 @@
 <template>
   <div class="concerts">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">LocalScene</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,6 +30,9 @@
 .concerts {
   min-height: 100%;
   margin-bottom: -50px;
+}
+nav {
+  width: 100%;
 }
 </style>
 
