@@ -1,20 +1,20 @@
 <template>
   <div class="concerts">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">LocalScene</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+      <div class="container-fluid">
+       <a class="navbar-brand" href="/">LocalScene</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="/">Home</a>
+             </li>
+            </ul>
+         </div>
+       </div>
+    </nav>
     <h2>{{ message }}</h2>
     <p v-for="concert in sortedConcerts">
       {{ concert.date }}
@@ -22,7 +22,7 @@
       {{ concert.venue }}
       <a v-bind:href="`${concert.tickets}`"> Tickets </a>
       </p>
-      <router-link v-bind:to="`${this.$route.params.id}/all`"> See More </router-link>
+      <router-link v-bind:to="`${this.$route.params.id}/all`"> See The Full List of Concerts Here </router-link>
   </div>
 </template>
 
@@ -30,9 +30,6 @@
 .concerts {
   min-height: 100%;
   margin-bottom: -50px;
-}
-nav {
-  width: 100%;
 }
 </style>
 

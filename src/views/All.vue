@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="all">
      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
      <div class="container-fluid">
       <a class="navbar-brand" href="/">LocalScene</a>
@@ -21,7 +21,8 @@
       {{ concert.name }}
       {{ concert.venue }}
       <a v-bind:href="`${concert.tickets}`"> Tickets </a>
-      </div>
+    </div>
+    <router-link v-bind:to="`/${this.$route.params.id}`"> Back to Concert Summary Page</router-link>
   </div>
 </template>
 
