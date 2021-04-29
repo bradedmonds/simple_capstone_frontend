@@ -1,6 +1,9 @@
 <template>
   <div class="home">
-    <h1>{{ message }}</h1>
+  <header id="header">
+    <h1>Local Scene</h1>
+    <p >The easiest way to find the best concerts in your scene</p>
+  </header>
     <div class="dropdown">
       <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
        Select Your City
@@ -11,6 +14,9 @@
     </div>
   </div>
 </template>
+
+<style>
+</style>
 
 <script>
 import axios from "axios";
