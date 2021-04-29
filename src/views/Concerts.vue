@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="concerts">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">LocalScene</a>
@@ -27,23 +27,10 @@
 </template>
 
 <style>
-/* h2 {
-  margin: auto;
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  font-size: 5em;
-  color: white;
-  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
+.concerts {
+  min-height: 100%;
+  margin-bottom: -50px;
 }
-
-p {
-  color: white;
-  font-size: 1.5em;
-  text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black;
-} */
 </style>
 
 <script>
