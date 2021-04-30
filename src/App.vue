@@ -1,10 +1,20 @@
 <template>
   <div id="app">
-    <!-- <header id="header">
-    <h1>Eventually</h1>
-    <p >A simple template for telling the world when you'll launch<br />
-    your next big thing. Brought to you by <a href="http://html5up.net">HTML5 UP</a>.</p>
-  </header> -->
+     <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+       <a class="navbar-brand" href="/">LocalScene</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+         <span class="navbar-toggler-icon"></span>
+        </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="/">Home</a>
+             </li>
+            </ul>
+         </div>
+       </div>
+    </nav> -->
  
     <router-view/>
 

@@ -1,6 +1,6 @@
 <template>
   <div class="concerts">
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
        <a class="navbar-brand" href="/">LocalScene</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,6 +16,8 @@
        </div>
     </nav>
     <h2>{{ message }}</h2>
+    <h3>The best upcoming shows in your area:</h3>
+    <p></p>
     <p v-for="concert in sortedConcerts">
       {{ concert.date }}
       {{ concert.name }}
@@ -27,9 +29,14 @@
 </template>
 
 <style>
-.concerts {
-  min-height: 100%;
-  margin-bottom: -50px;
+h2 {
+  font-size: 5em;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 2px 2px 2px black;
+}
+h3 {
+  font-size: 1.5em;
+  text-shadow: 2px 2px black;
 }
 </style>
 
@@ -40,7 +47,7 @@ export default {
     return {
       message: `${this.$route.params.id} Concerts`,
       concerts: [],
-      largeConcerts: [],
+      xlConcerts: [],
       largeConcerts: [],
       sortedConcerts: [],
     };

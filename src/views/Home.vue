@@ -1,11 +1,11 @@
 <template>
   <div class="home">
-  <header id="header">
-    <h1>Local Scene</h1>
-    <p >The easiest way to find the best concerts in your scene</p>
+  <header class="home">
+    <h1>LocalScene</h1>
+    <p class="home">The easiest way to find the best concerts in your city</p>
   </header>
     <div class="dropdown">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+      <button class="btn btn-secondary btn-large dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
        Select Your City
       </button>
       <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -16,6 +16,16 @@
 </template>
 
 <style>
+h1 {
+  font-size: 7em;
+  font-family: "Courier New", Courier, monospace;
+  text-shadow: 3px 3px 3px black;
+}
+p.home {
+  font-size: 1.5em;
+  color: white;
+  text-shadow: 2px 2px black;
+}
 </style>
 
 <script>
