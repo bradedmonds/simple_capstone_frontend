@@ -18,13 +18,25 @@
     <h2>{{ message }}</h2>
     <h3>The best upcoming shows in your area:</h3>
     <p></p>
-    <p v-for="concert in sortedConcerts">
-      {{ concert.date }}
-      {{ concert.name }}
-      {{ concert.venue }}
-      <a v-bind:href="`${concert.tickets}`"> Tickets </a>
-      </p>
-      <router-link v-bind:to="`${this.$route.params.id}/all`"> See The Full List of Concerts Here </router-link>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Venue</th>
+          <th scope="col">Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="concert in sortedConcerts">
+          <th scope="row">{{concert.date}}</th>
+          <td>{{concert.name}}</td>
+          <td>{{concert.venue}}</td>
+          <td><a v-bind:href="`${concert.tickets}`">Tickets</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <router-link v-bind:to="`${this.$route.params.id}/all`"> See The Full List of Concerts Here </router-link>
   </div>
 </template>
 

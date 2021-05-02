@@ -16,12 +16,24 @@
   </div>
 </nav>
     <h2>{{ message }}</h2>
-    <div class="list" v-for="concert in concerts">
-      {{ concert.date }}
-      {{ concert.name }}
-      {{ concert.venue }}
-      <a v-bind:href="`${concert.tickets}`"> Tickets </a>
-    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Date</th>
+          <th scope="col">Artist</th>
+          <th scope="col">Venue</th>
+          <th scope="col">Tickets</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="concert in concerts">
+          <th scope="row">{{concert.date}}</th>
+          <td>{{concert.name}}</td>
+          <td>{{concert.venue}}</td>
+          <td><a v-bind:href="`${concert.tickets}`">Tickets</a></td>
+        </tr>
+      </tbody>
+    </table>
     <router-link v-bind:to="`/${this.$route.params.id}`"> Back to Concert Summary Page</router-link>
   </div>
 </template>
