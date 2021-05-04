@@ -15,7 +15,9 @@
      </div>
   </div>
 </nav>
-    <h2>{{ message }}</h2>
+
+  <div>
+    <h2 id="title">{{ message }}</h2>
     <table class="table">
       <thead>
         <tr>
@@ -26,22 +28,42 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="concert in concerts">
-          <th scope="row">{{concert.date}}</th>
-          <td>{{concert.name}}</td>
-          <td>{{concert.venue}}</td>
+        <tr scope="row" v-for="concert in concerts">
+          <td>{{concert.date}}</td>
+          <td><a v-on:click="artistDetails(concert)">{{concert.name}}</a></td>
+          <td><a >{{concert.venue}}</a></td>
           <td><a v-bind:href="`${concert.tickets}`">Tickets</a></td>
         </tr>
       </tbody>
     </table>
     <router-link v-bind:to="`/${this.$route.params.id}`"> Back to Concert Summary Page</router-link>
   </div>
+
+    <!-- artist modal -->
+    <!-- <div class="modal" tabindex="-1" id="artistModal" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Artist</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p>Modal body text goes here.</p>
+          </div>
+          <div class="modal-footer">
+           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+  </div>
 </template>
 
 <style>
-/* div.list {
-  top: 5%;
-} */
+#title {
+  padding-top: 250px;
+}
 </style>
 
 <script>
@@ -54,6 +76,7 @@ export default {
       xlConcerts: [],
       largeConcerts: [],
       sortedConcerts: [],
+      selectedConcert: [],
     };
   },
   created: function () {
@@ -64,8 +87,11 @@ export default {
     });
   },
   methods: {
-    allConcerts: function () {
-      console.log(this.concerts);
+    artistDetails: function (concert) {
+      console.log("artist details");
+      this.selectedConcert = concert;
+      document.getElementById("#artistModal");
+      console.log(this.selectedConcert);
     },
   },
 };

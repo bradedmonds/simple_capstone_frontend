@@ -61,6 +61,7 @@ export default {
       concerts: [],
       xlConcerts: [],
       largeConcerts: [],
+      mediumConcerts: [],
       sortedConcerts: [],
     };
   },
@@ -77,6 +78,10 @@ export default {
       console.log(this.xlConcerts);
       this.xlConcerts = this.xlConcerts.sort((a, b) => (a.score > b.score ? -1 : 1));
       console.log(this.xlConcerts);
+      this.mediumConcerts = this.concerts.filter((concert) => concert.category === "Medium");
+      console.log(this.mediumConcerts);
+      this.mediumConcerts = this.mediumConcerts.sort((a, b) => (a.score > b.score ? -1 : 1));
+      console.log(this.mediumConcerts);
       if (this.xlConcerts.length > 5) {
         this.sortedConcerts.push(
           this.xlConcerts[0],
@@ -100,6 +105,19 @@ export default {
         );
       } else {
         this.largeConcerts.forEach((concert) => {
+          this.sortedConcerts.push(concert);
+        });
+      }
+      if (this.mediumConcerts.length > 5) {
+        this.sortedConcerts.push(
+          this.mediumConcerts[0],
+          this.mediumConcerts[1],
+          this.mediumConcerts[2],
+          this.mediumConcerts[3],
+          this.mediumConcerts[4]
+        );
+      } else {
+        this.mediumConcerts.forEach((concert) => {
           this.sortedConcerts.push(concert);
         });
       }
