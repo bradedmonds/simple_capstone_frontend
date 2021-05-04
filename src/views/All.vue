@@ -31,7 +31,7 @@
         <tr scope="row" v-for="concert in concerts">
           <td>{{concert.date}}</td>
           <td><a v-on:click="artistDetails(concert)">{{concert.name}}</a></td>
-          <td><a >{{concert.venue}}</a></td>
+          <td><a data-bs-toggle="modal" data-bs-target="#artistModal">{{concert.venue}}</a></td>
           <td><a v-bind:href="`${concert.tickets}`">Tickets</a></td>
         </tr>
       </tbody>
@@ -56,13 +56,14 @@
         </div>
       </div>
     </div> -->
+    
 
   </div>
 </template>
 
 <style>
 #title {
-  padding-top: 250px;
+  padding-top: 300px;
 }
 </style>
 

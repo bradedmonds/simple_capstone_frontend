@@ -15,7 +15,7 @@
          </div>
        </div>
     </nav>
-    <h2>{{ message }}</h2>
+    <h2 id="title">{{ message }}</h2>
     <h3>The best upcoming shows in your area:</h3>
     <p></p>
     <table class="table">
@@ -62,6 +62,7 @@ export default {
       xlConcerts: [],
       largeConcerts: [],
       mediumConcerts: [],
+      smallConcerts: [],
       sortedConcerts: [],
     };
   },
@@ -82,6 +83,10 @@ export default {
       console.log(this.mediumConcerts);
       this.mediumConcerts = this.mediumConcerts.sort((a, b) => (a.score > b.score ? -1 : 1));
       console.log(this.mediumConcerts);
+      this.smallConcerts = this.concerts.filter((concert) => concert.category === "Small");
+      console.log(this.smallConcerts);
+      this.smallConcerts = this.smallConcerts.sort((a, b) => (a.score > b.score ? -1 : 1));
+      console.log(this.smallConcerts);
       if (this.xlConcerts.length > 5) {
         this.sortedConcerts.push(
           this.xlConcerts[0],
@@ -118,6 +123,13 @@ export default {
         );
       } else {
         this.mediumConcerts.forEach((concert) => {
+          this.sortedConcerts.push(concert);
+        });
+      }
+      if (this.smallConcerts.length > 3) {
+        this.sortedConcerts.push(this.smallConcerts[0], this.smallConcerts[1], this.smallConcerts[2]);
+      } else {
+        this.smallConcerts.forEach((concert) => {
           this.sortedConcerts.push(concert);
         });
       }
